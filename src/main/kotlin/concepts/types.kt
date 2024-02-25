@@ -1,4 +1,4 @@
-package org.tempest.types
+package org.tempest.concepts
 
 // TIPOS ENTEROS
 val one = 1 // Int
