@@ -13,13 +13,11 @@ fun estrucuraIf() {
     var max = 0
     val maxLimit = 100
     // IF - ELSE IF - ELSE
-    if (a < b)
-        max = a
-    else max = b
-
     max = if (a < b) a else b
+    print(max)
 
     max = if (maxLimit > a) maxLimit else if (a > b) a else b
+    print(max)
 }
 
 fun getRank(power: Int): String {
@@ -41,7 +39,7 @@ fun getRandomBit(): Bit {
     return if (Random.nextBoolean()) Bit.ZERO else Bit.ONE
 }
 
-fun estructuraWhen(): Unit {
+fun estructuraWhen() {
     val a = 10
 
     when (a) {
@@ -61,7 +59,7 @@ fun estructuraWhen(): Unit {
     println("level: ${getRank(1_000)}")
 }
 
-fun cicloFor(): Unit {
+fun cicloFor() {
     val array = arrayOf<String>("kike", "karla", "fernanda", "greta")
 
     println("iterar un array con indices")
