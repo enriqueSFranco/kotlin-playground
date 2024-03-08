@@ -1,6 +1,8 @@
 package org.tempest
 
-fun main() {
+import org.tempest.algorithms.leetcode.maximumOddBinaryNumber
 
+fun main() {
+    print(maximumOddBinaryNumber("0101"))
 }
 
