@@ -1,5 +1,13 @@
 package org.tempest.concepts
 
+/**
+ * LAS SEALED CLASS SE USAN MEJOR EN ESTOS ESCENARIOS
+ *
+ * 1.- Se desea una herencia de clase limitada
+ * 2.- Se requiere un diseño seguro para los tipos
+ * 3.- Trabajar con API cerradas
+ **/
+
 // Manejando diferentes status de respuesta
 sealed class Result {
     data class Success(val data: String): Result()
@@ -67,3 +75,4 @@ sealed interface ProfileScreenState {
     object Error: ProfileScreenState
     object Loading: ProfileScreenState
 }
+
