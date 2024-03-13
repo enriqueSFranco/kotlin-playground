@@ -19,3 +19,14 @@ fun extensionsTest() {
     list.swap(0,3)
     print(list)
 }
+
+fun Any?.isNull() = this == null
+
+fun isNullTest() {
+    val age: Int? = null
+    print(age.isNull()) // true si es null
+}
+
+// fun Activity.color(@ColorRes color:Int) = ContextCompact.getColor(this, color)
+
+// fun Activity.toast(text: String, length: Int = Toast.LENGTH_SHORT) = Toast.makeText(this, text, length).show()
