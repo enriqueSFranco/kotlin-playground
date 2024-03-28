@@ -1,8 +1,8 @@
 package org.tempest
 
-import org.tempest.algorithms.leetcode.maximumOddBinaryNumber
+import org.tempest.algorithms.leetcode.arithmeticTriplets
 
 fun main() {
-    print(maximumOddBinaryNumber("0101"))
+    val nums = intArrayOf(0, 1, 4, 6, 7, 10)
+    println("result ${arithmeticTriplets(nums, 3)}")
 }
-
