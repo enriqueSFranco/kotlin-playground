@@ -1,8 +1,24 @@
 package org.tempest
 
-import org.tempest.algorithms.leetcode.arithmeticTriplets
+fun finalPrices(prices: IntArray): IntArray {
+    val storage = mutableListOf<Int>()
+    val finalPrices = IntArray(prices.size)
+
+    for (index in prices.indices) {
+        while (storage.isNotEmpty() && prices[index] <= prices[storage.last()]) {
+            val position = storage.removeLast()
+            finalPrices[position] = prices[position] - prices[index]
+        }
+        storage.add(index)
+    }
+    return finalPrices
+}
 
 fun main() {
-    val nums = intArrayOf(0, 1, 4, 6, 7, 10)
-    println("result ${arithmeticTriplets(nums, 3)}")
+    val prices = intArrayOf(8, 4, 6, 2, 3)
+    val result: IntArray = finalPrices((prices))
+
+    for (price in result) {
+        println(price)
+    }
 }
