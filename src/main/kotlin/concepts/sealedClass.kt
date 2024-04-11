@@ -69,10 +69,14 @@ fun handleViewState(viewState: ViewState) {
     }
 }
 
-// OTRO EJEMPLO
-sealed interface ProfileScreenState {
-    data class Success(val username: String): ProfileScreenState
-    object Error: ProfileScreenState
-    object Loading: ProfileScreenState
+// SEALED CLASS PARA PLANETAS
+sealed class Planet(val id: Int) {
+    class BasicPlanet(id: Int): Planet(id)
+    class PlanetWithSatellites(id: Int, val satellites: List<String>): Planet(id)
 }
 
+fun fooPlanet() {
+    val mercury = Planet.BasicPlanet(0)
+    val earth = Planet.PlanetWithSatellites(2, listOf("Moon"))
+
+}
