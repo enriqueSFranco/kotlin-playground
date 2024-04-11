@@ -76,4 +76,8 @@ fun cicloFor() {
     // itera de 3 en 3 desde el 6 hasta el 0
     for (i in 6 downTo 0 step 3)
         println(i)
+
+    for (i in 10 downTo 1) {
+        println(i)
+    }
 }

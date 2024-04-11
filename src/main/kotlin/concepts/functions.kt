@@ -2,10 +2,6 @@ package org.tempest.concepts
 
 import kotlin.math.pow
 
-fun double (x: Int) : Int {
-    return 2 * x
-}
-
 /**
  * Calcula la potencia de un número elevado a un exponente.
  *
@@ -20,3 +16,36 @@ fun powerOf(
     number: Double = 5.0,
     exponent: Double = 2.0
 ): Double { return number.pow(exponent) }
+
+// ARGUMENTOS NOMBRADOS
+fun reformat(
+    str: String,
+    normalizeCase: Boolean = false,
+    upperCaseFirstLetter: Boolean = false,
+    divideByCamelHumps: Boolean = false,
+    wordSeparator: Char = ' '
+) {
+}
+
+fun testFunReformat() {
+    reformat(
+        str = "hello world",
+        normalizeCase = true,
+        true,
+        divideByCamelHumps = true,
+        '-',
+    )
+}
+
+// SINGLE EXPRESSION FUNCTIONS
+fun dobule(x: Int) = 2 * x
+
+// Variable number of arguments (varargs)
+fun <T> asList(vararg ts: T): List<T> {
+    val result = ArrayList<T>()
+
+    for (item in ts) {
+        result.add(item)
+    }
+    return result
+}
