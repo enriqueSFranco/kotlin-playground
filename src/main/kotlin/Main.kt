@@ -1,10 +1,10 @@
 package org.tempest
 
-import org.tempest.algorithms.leetcode.firstUniqCharQueue
+import org.tempest.dataStructure.stack.largestRectangleArea
+
 
 fun main() {
-    val s1 = "aabb"
-    val s2 = "leetcode"
+    val heights = intArrayOf(2,1,5,6,2,3)
 
-    print(firstUniqCharQueue(s1))
+    print("is valid: ${largestRectangleArea(heights)}")
 }
