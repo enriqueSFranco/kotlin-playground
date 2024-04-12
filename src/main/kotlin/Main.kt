@@ -1,12 +1,10 @@
 package org.tempest
 
-// TEST
-//println(simplifyPath("/a//b////c/d//././/.."))
-//println(simplifyPath("/a/./b/../../c/"))
-//println(simplifyPath("/home//foo/"))
-//println(simplifyPath("/home/"))
-//print(simplifyPath("/../"))
+import org.tempest.algorithms.leetcode.firstUniqCharQueue
 
 fun main() {
+    val s1 = "aabb"
+    val s2 = "leetcode"
 
+    print(firstUniqCharQueue(s1))
 }

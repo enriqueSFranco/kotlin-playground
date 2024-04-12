@@ -1,5 +1,8 @@
 package org.tempest.concepts
 
+// GENERAN UNA ÚNICA INSTANCIA DE CADA VALOR DEFINIDO, POR LO QUE NO PUEDEN EXISTIR
+// DOS OBJETOS DISTINROS QUE REPRESENTEN A POR EJEMPLO CORONA O VENUS
+
 enum class BeerBrand(val alcoholLevel: Double) {
     CORONA(4.53), // -> ordinal = 0
     NEGRA_MODELO(5.25), // -> ordinal = 1
@@ -24,3 +27,18 @@ fun describe(beerBrand: BeerBrand) = when (beerBrand) {
     BeerBrand.NEGRA_MODELO -> "Negra Modelo"
     BeerBrand.MODELO_ESPECIAL -> "Modelo Especial"
 }
+
+// ENUMS PARA ENUMERAR PLANETAS
+//enum class Planet(val id: Int) {
+//    MERCURY(0) {
+//        override fun orbit() {}
+//    },
+//    VENUS(1) {
+//        override fun orbit() {}
+//    },
+//    EARTH(2) {
+//        override fun orbit() {}
+//    };
+//
+//    abstract fun orbit()
+//}
