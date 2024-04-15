@@ -1,23 +1,14 @@
 package org.tempest
 
-import org.tempest.dataStructure.LinkedList
+import org.tempest.dataStructure.queue.MyStack
 
 fun main() {
-    val myList = LinkedList<Int>()
+    val myStack = MyStack()
 
-    myList.add(1)
-   myList.add(2)
-    myList.add(3)
-    myList.add(5)
-    myList.addAt(2, 4)
-    myList.addAt(0, 0)
-    myList.showList()
-    println()
-    myList.removeLast()
-    myList.removeFirst()
+    myStack.push(1)
+    myStack.push(2)
+    myStack.push(3)
 
-    myList.showList()
-    println()
-    println("esta vacia? ${myList.isEmptyList()}")
-    println("size: ${myList.size()}")
+    println("top: ${myStack.top()}")
+
 }
