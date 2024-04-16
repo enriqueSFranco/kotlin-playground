@@ -1,6 +1,6 @@
 package org.tempest.dataStructure
 
-data class ListNode<T>(val value: T, var next: ListNode<T>? = null)
+import org.tempest.dataStructure.linkedList.ListNode
 
 interface OutLinkedList<T> {
     fun add(item: T)
