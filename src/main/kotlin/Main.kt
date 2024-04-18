@@ -1,14 +1,9 @@
 package org.tempest
 
-import org.tempest.dataStructure.queue.MyStack
+import org.tempest.algorithms.recursividad.factorial
+
 
 fun main() {
-    val myStack = MyStack()
-
-    myStack.push(1)
-    myStack.push(2)
-    myStack.push(3)
-
-    println("top: ${myStack.top()}")
-
+    val x = 5
+    print(factorial(x))
 }
