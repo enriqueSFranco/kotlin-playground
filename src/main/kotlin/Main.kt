@@ -1,10 +1,9 @@
 package org.tempest
 
-import org.tempest.algorithms.leetcode.firstUniqCharQueue
+import org.tempest.desingPatterns.EmployeeBuilder
 
 fun main() {
-    val s1 = "aabb"
-    val s2 = "leetcode"
+   val employee = EmployeeBuilder.Builder("1", "", 28).build()
 
-    print(firstUniqCharQueue(s1))
+    print(employee)
 }
