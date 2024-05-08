@@ -1,27 +1,24 @@
 package org.tempest.algorithms.dynamicProgramming
 
+import kotlin.math.min
+
 // https://leetcode.com/problems/coin-change/
-
-fun coinChangeDP(coins: IntArray, amount: Int): Int {
-    return 0
-}
-
-// SOLUCIÓN USANDO GREEDY
 fun coinChange(coins: IntArray, amount: Int): Int {
-    // intArrayOf(186,419,83,408), amount = 6249
-    coins.sortDescending()
-    var _amount = amount
-    var change = IntArray(coins.size) { 0 }
-    var i = 0
+    if (amount < 1) return 0
 
-    while (_amount != 0 && i < coins.size) {
-        while (coins[i] <= _amount) {
-            //println("${coins[i]}, $_amount")
-            _amount -= coins[i]
-            change[i] += 1
+    val minCoinsDP = IntArray(amount + 1)
+
+    for (i in 1..amount) {
+        minCoinsDP[i] = Int.MAX_VALUE // indica que inicialmente no se ha encontrado ninguna forma de alcanzar el monto.
+
+        for (coin in coins) {
+            if (coin <= i && minCoinsDP[i - coin] != Int.MAX_VALUE) {
+                minCoinsDP[i] = min(minCoinsDP[i], 1 + minCoinsDP[i - coin])
+            }
         }
-        i++
     }
-    println(change.joinToString(" "))
-    return if (_amount != 0) -1 else change.sum()
+    if (minCoinsDP[amount] == Int.MAX_VALUE)
+        return -1
+
+    return minCoinsDP[amount]
 }
