@@ -1,15 +1,13 @@
 package org.tempest
+
 import kotlin.time.measureTime
-
-import org.tempest.algorithms.dynamicProgramming.coinChange
-
+import org.tempest.algorithms.dynamicProgramming.maxProduct
 
 fun main() {
    //val employee = EmployeeBuilder.Builder("1", "", 28).build()
-    val coins = intArrayOf(186,419,83,408)
-    val amount = 6249
+    val prices = intArrayOf(0,2)
     val time = measureTime {
-        val ans = coinChange(coins, amount)
+        val ans = maxProduct(prices)
         println(ans)
     }
     println("El tiempo de ejecución fue de $time milisegundos.")
