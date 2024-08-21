@@ -1,29 +1,29 @@
 package org.tempest.dataStructure.tree
 
-class Node(val data: Int, var left: Node? = null, var right: Node? = null) {}
+class BSTNode(val data: Int, var left: BSTNode? = null, var right: BSTNode? = null) {}
 
 interface IBST {
     fun insert(data: Int)
     fun search(key: Int): Boolean
-    fun isleaf(node: Node?): Boolean
-    fun delete(key: Int): Node?
-    fun inOrderTraversal(node: Node?)
-    fun preOrderTraversal(node: Node?)
-    fun postOrderTraversal(node: Node?)
+    fun isleaf(node: BSTNode?): Boolean
+    fun delete(key: Int): BSTNode?
+    fun inOrderTraversal(node: BSTNode?)
+    fun preOrderTraversal(node: BSTNode?)
+    fun postOrderTraversal(node: BSTNode?)
 }
 
 class BinarySearchTree: IBST {
-    var root: Node? = null
+    var root: BSTNode? = null
 
-    override fun isleaf(node: Node?) = root != null && root?.left == null && root?.right == null
+    override fun isleaf(node: BSTNode?) = root != null && root?.left == null && root?.right == null
 
     override fun insert(data: Int) {
         root = insertNode(root, data)
     }
 
-    private fun insertNode(node: Node?, data: Int): Node {
+    private fun insertNode(node: BSTNode?, data: Int): BSTNode {
         if (node == null) {
-            return Node(data)
+            return BSTNode(data)
         }
         if (data < node.data) {
             // insert to left
@@ -38,7 +38,7 @@ class BinarySearchTree: IBST {
         return searchNode(root, key)
     }
 
-    private fun searchNode(node: Node?, key: Int): Boolean {
+    private fun searchNode(node: BSTNode?, key: Int): Boolean {
         if (node == null) return false
 
         if (node.data == key) return true
@@ -52,11 +52,11 @@ class BinarySearchTree: IBST {
         }
     }
 
-    override fun delete(key: Int): Node? {
+    override fun delete(key: Int): BSTNode? {
         return deleteNode(root, key)
     }
 
-    private fun deleteNode(node: Node?, key: Int): Node? {
+    private fun deleteNode(node: BSTNode?, key: Int): BSTNode? {
         if (node == null) return null
 
         if (key < node.data) {
@@ -78,7 +78,7 @@ class BinarySearchTree: IBST {
         return null
     }
 
-    fun minValue(node: Node?): Node? {
+    fun minValue(node: BSTNode?): BSTNode? {
         if (node == null)  return null
 
         var min = node.data
@@ -90,7 +90,7 @@ class BinarySearchTree: IBST {
         return null
     }
 
-    override fun inOrderTraversal(node: Node?) {
+    override fun inOrderTraversal(node: BSTNode?) {
         if (node != null) {
             inOrderTraversal(node.left)
             print(node.data)
@@ -99,7 +99,7 @@ class BinarySearchTree: IBST {
         return
     }
 
-    override fun preOrderTraversal(node: Node?) {
+    override fun preOrderTraversal(node: BSTNode?) {
         if (node != null) {
             print(node.data)
             preOrderTraversal(node.left)
@@ -108,7 +108,7 @@ class BinarySearchTree: IBST {
         return
     }
 
-    override fun postOrderTraversal(node: Node?) {
+    override fun postOrderTraversal(node: BSTNode?) {
         if (node != null) {
             postOrderTraversal(node.left)
             postOrderTraversal(node.right)
