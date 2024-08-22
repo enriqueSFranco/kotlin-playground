@@ -1,6 +1,5 @@
 package org.tempest
 
-import org.tempest.algorithms.leetcode.Tweet
 import org.tempest.algorithms.leetcode.Twitter
 import kotlin.time.measureTime
 
