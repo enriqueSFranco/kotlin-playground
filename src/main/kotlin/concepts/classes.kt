@@ -17,6 +17,7 @@ import kotlin.math.pow
  *
  * */
 
+
 /**
  * CONSTRUCTORES SECUNDARIOS
  *
@@ -35,12 +36,16 @@ class Person(val name: String) {
     }
 }
 
-
 // 2do EJEMPLO DE CONSTRUCTORES SECUNDARIOS
 class Device(val brand: String, val model: String, val price: Double) {
     constructor(brand: String, model: String) : this(brand, model, 0.0)
 
     constructor(brand: String) : this(brand, "Unknown", 0.0)
+}
+
+// 3er EJEMPLO DE CONSTRUCTORES SECUNDARIOS
+class Libro(val title: String, val autor: String) {
+    constructor(title: String) : this(title, "Desconocido")
 }
 
 /**
@@ -65,6 +70,17 @@ class SuperHero constructor(
 
     init {
         println("Second initializer block that name size is: ${name.length}")
+    }
+}
+
+// 2do Ejemplo de constructor primario
+class Employee(val name: String = "Anonymous", var salary: Double) {
+    fun giveRise(amount: Double) {
+        salary += amount
+    }
+
+    fun displayInfo() {
+        println("Employee Name: $name, Salary: $salary")
     }
 }
 
@@ -93,7 +109,7 @@ class Hexagon : Polygon() {
  *
  * Por otro lado, las clases también necesitan ser marcadas como open si quieres que puedan ser heredadas.
  **/
-open abstract class Shape {
+abstract class Shape {
     open fun area(): Double {
         return 0.0
     }
@@ -121,3 +137,38 @@ open class Square(val l: Double) : Shape() {
 // CREANDO INSTANCIAS DE CLASES
 val superHeroeOne = SuperHero("super man", "clark", 32)
 val iphone15 = Device("apple", "iphone 15", 32500.00)
+
+open class PaymentGateway {
+    open fun processPayment(amount: Double): Boolean {
+        print("Procesando el pago de $amount en la pasarela de pago.")
+        return true
+    }
+}
+
+class CreditCardPaymentGateway : PaymentGateway() {
+    override fun processPayment(amount: Double): Boolean {
+        print("Procesando el pago de $amount con tarjeta de credito.")
+        return true
+    }
+}
+
+class PaypalPaymentGateway : PaymentGateway() {
+    override fun processPayment(amount: Double): Boolean {
+        print("Procesando el pago de $amount con Paypal.")
+        return true
+    }
+}
+
+fun processPayment(gateway: PaymentGateway, amount: Double) {
+    gateway.processPayment(amount)
+}
+
+fun testingClasses() {
+    val paymentGateways = arrayOf(CreditCardPaymentGateway(), PaypalPaymentGateway())
+    val amounts = arrayOf(5_000.00, 25_000.00)
+
+    for ((index, gateway) in paymentGateways.withIndex()) {
+        val amount = amounts[index]
+        gateway.processPayment(amount)
+    }
+}

@@ -18,7 +18,7 @@ fun getRandomBit(): Bit {
     return if (Random.nextBoolean()) Bit.ZERO else Bit.ONE
 }
 
-fun main() {
+fun testingControlFlow() {
     // ************* Operations on numbers *************
     println("suma: ${1 + 1}")
     println("resta: ${2_500_000_000L - 1L}")
@@ -125,12 +125,12 @@ fun main() {
         else -> println("Nombre adecuado")
     }
 
-    val objeto: String = ""
-    when(objeto) {
-        is String -> print("Es un string")
-        is Int -> print("Es un entero")
-        else -> print("Es otro tipo")
-    }
+//    val objeto: String = ""
+//    when(objeto) {
+//        is String -> print("Es un string")
+//        is Int -> print("Es un entero")
+//        else -> print("Es otro tipo")
+//    }
 
     // *********** BUCLE FOR ***********
     val array = arrayOf<String>("kike", "karla", "fernanda", "greta")
