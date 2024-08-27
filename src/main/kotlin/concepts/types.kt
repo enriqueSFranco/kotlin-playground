@@ -50,37 +50,6 @@ fun main () {
     println('\n') // Prints an extra newline character
     println('\uFF00')
 
-    // ******** STRINGS ********
-    val textOne = "hello world"
-    val textOnerUpperCase = textOne.uppercase()
-
-    // STRING MULTI-LINEA
-    var paragraphOne = """
-        for (c in paragraph) {
-            println(c)
-        }
-    """
-
-    // TEMPLATE STRING
-    val paragraphTwo = "hello"
-    // $ -> imprime el valor de la variable
-    // ${} -> sirve para operaciones y mostar su valor
-    // print("longitud de $paragraphTwo es: ${paragraphTwo.length}")
-
-    // FORMATO DE STRINGS
-    // Formats to add zeroes and make a length of seven
-    val integerNumber = String.format("%07d", 31416)
-    // 0031416
-
-    // Formats with four decimals and sign
-    val floatNumber = String.format("%+.4f", 3.141592)
-    // +3.1416
-
-    // Formats with uppercase for two placeholders
-    val helloString = String.format("%S %S", "hello", "world")
-    // HELLO WORLD
-
-
     // ARRAYS
     val goldenSaint = arrayOf(
         "mu",

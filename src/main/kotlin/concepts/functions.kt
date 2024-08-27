@@ -97,7 +97,7 @@ fun <T> asList(vararg ts: T): List<T> {
     return result
 }
 
-fun main() {
+fun testingFunctions() {
     reformat(
         str = "hello world",
         normalizeCase = true,

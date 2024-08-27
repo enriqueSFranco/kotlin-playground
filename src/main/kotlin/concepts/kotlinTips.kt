@@ -113,7 +113,7 @@ fun tipLoopsInKotlin() {
 
 
 // PARA UNA DATA CLASS EL COMPILAR DE KOTLIN GENERA UNA COMPONENT_N FUNCTION PARA CADA PROPIEDAD DECLARADA EN EL CONSTRUCTOR PRIMARIO
-class Vector(val x: Double, val y: Double) {
+class Vector2(val x: Double, val y: Double) {
     operator fun component1(): Double = x
 
     operator fun component2(): Double = y
@@ -153,7 +153,7 @@ fun tipDestructuringDeclarations() {
     val (name, hobby) = kirito // USA LA POSICIÓN PARA DESTRUCTURAR EL OBJETO
 
     // DESTRUCTURAR UNA CLASE
-    val vec1 = Vector(5.0, 10.0)
+    val vec1 = Vector2(5.0, 10.0)
     val (x, y) = vec1
 }
 

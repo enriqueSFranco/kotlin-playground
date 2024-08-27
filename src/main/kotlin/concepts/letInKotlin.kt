@@ -1,9 +1,9 @@
 package org.tempest.concepts
 
-data class Employee(val name: String, val job: String?)
+data class Employee2(val name: String, val job: String?)
 
 fun testEmployee() {
-    val e = Employee("Toby", "software engineer")
+    val e = Employee2("Toby", "software engineer")
 
     // let evita hacer este tipo de cosas
     // val name = e.name

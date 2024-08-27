@@ -10,7 +10,7 @@ interface OurStack<T> {
     fun peek(): T?
     fun isEmpty(): Boolean
     fun size(): Int
-    fun showStack(): Unit
+    fun display(): Unit
 }
 
 class Stack<T>: OurStack<T> {
@@ -39,7 +39,7 @@ class Stack<T>: OurStack<T> {
 
     override fun size(): Int = stackSize
 
-    override fun showStack() {
+    override fun display() {
         var currNode = head
 
         if(currNode == null) print("stack empty")
