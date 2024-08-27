@@ -60,3 +60,26 @@ fun recursiveIsPowerOfFour(n: Int): Boolean {
     if (n == 1) return true
     return recursiveIsPowerOfFour(n / 4)
 }
+
+fun isPowerOfThree(n: Int): Boolean {
+//    if (n < 1) return false
+//    var _n = n
+//    while (_n % 3 == 0) _n /= 3
+//
+//    return _n == 1
+    if (n < 1) return false
+    if (n == 1) return true
+    return n % 3 == 0 && isPowerOfThree(n / 3)
+}
+
+fun zeros(n: Int): Int {
+//    var count = 0
+//    var divisor = 5
+//
+//    while (n >= 0) {
+//        count += n / divisor
+//        divisor *= 5
+//    }
+//    return count
+    return if (n > 0) n / 5 + zeros(n / 5) else 0
+}

@@ -5,7 +5,7 @@ import kotlin.math.pow
 /**
  * Si una clase no tiene construcor primario, se crea uno vacio y la visivilidad sera public
  * Si una clase no tiene constructor pero se requiere de un constructor privado lo que se hace es lo siguiente
- * -> class Person private constructor() {}
+ * class Person private constructor() {}
  * Las clases en kotlin por defecto son final, lo que significa que no se pueden heredar
  *
  * LAS CLASES PUEDEN CONTENER
