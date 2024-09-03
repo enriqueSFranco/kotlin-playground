@@ -9,7 +9,7 @@ fun countingSort(arr: Array<Int>): Array<Int> {
     }
 
     // suma acumulativa
-    for (i in 1..<count.size) {
+    for (i in 1 until count.size) {
         count[i] += count[i - 1]
     }
 
