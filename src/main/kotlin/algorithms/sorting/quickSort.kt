@@ -29,6 +29,7 @@ fun swap(arr: Array<Int>, i: Int, j: Int) {
     arr[j] = tmp
 }
 
+@OptIn(ExperimentalStdlibApi::class)
 fun partitionLastElementAsPivot(arr: Array<Int>, low: Int, high: Int): Int {
     val pivot = arr[high]
     var ptr = low - 1

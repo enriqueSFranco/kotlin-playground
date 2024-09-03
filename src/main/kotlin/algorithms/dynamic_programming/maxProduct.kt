@@ -2,6 +2,7 @@ package org.tempest.algorithms.dynamicProgramming
 
 import kotlin.math.max
 
+@OptIn(ExperimentalStdlibApi::class)
 fun maxProduct(nums: IntArray): Int {
     val N = nums.size
     var leftProduct = 1
