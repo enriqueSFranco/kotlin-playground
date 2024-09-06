@@ -11,6 +11,7 @@ import kotlin.math.max
  *
  **/
 
+@OptIn(ExperimentalStdlibApi::class)
 fun kadane(arr: IntArray): Int {
     var maxSoFar = arr.first() // almacena la suma máxima encontrada hasta el momento durante el proceso.
     var maxEndingHere = arr.first() // almacena la suma máxima de la subserie que termina en el índice actual del arreglo.

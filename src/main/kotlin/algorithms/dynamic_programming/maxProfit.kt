@@ -17,6 +17,7 @@ fun maxProfitBF(prices: IntArray): Int {
     return profit
 }
 
+@OptIn(ExperimentalStdlibApi::class)
 fun maxProfit(prices: IntArray): Int {
     var buyPrice = prices[0]
     var profit = 0
