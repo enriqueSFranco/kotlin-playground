@@ -83,6 +83,7 @@ fun tipCollectionSecond() {
     val chunkEmojis = emojis.chunked(3) // [[🚀, 🎮, 🏀], [🎲, ✈️, 🛸], [🚁]]
 }
 
+@OptIn(ExperimentalStdlibApi::class)
 fun tipLoopsInKotlin() {
     val fruitsBasket = listOf("apple", "banana", "cherry", "durian")
 
