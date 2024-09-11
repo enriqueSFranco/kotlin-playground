@@ -140,3 +140,56 @@ class Olympics {
         getRankingCountry()
     }
 }
+
+fun OlympicsTest() {
+    val olympics = Olympics()
+    val sportingEvents = listOf(
+        "Natacion",
+        "Atletismo",
+        "Tiro con arco"
+    )
+    val participants = mutableMapOf(
+        "Natacion" to listOf(
+            Participant("albert", "🇺🇸Estados Unidos"),
+            Participant("pablo", "🇲🇽Mexico"),
+            Participant("tony", "🇬🇧Gran Bretaña"),
+            Participant("john", "🇨🇦Canada"),
+            Participant("lisa", "🇫🇷Francia"),
+            Participant("hiro", "🇯🇵Japon")
+        ),
+        "Atletismo" to listOf(
+            Participant("morgan", "🇺🇸Estados Unidos"),
+            Participant("ana", "🇲🇽Mexico"),
+            Participant("ashley", "🇬🇧Gran Bretaña"),
+            Participant("maria", "🇩🇪Alemania"),
+            Participant("amanda", "🇮🇹italia")
+        ),
+        "Tiro con arco" to listOf(
+            Participant("elizabeth", "🇺🇸Estados Unidos"),
+            Participant("natalia", "🇲🇽Mexico"),
+            Participant("sasha", "🏴󠁧󠁢󠁥󠁮󠁧󠁿Inglaterra"),
+            Participant("maria", "🇩🇪Alemania"),
+            Participant("amanda", "🇵🇹Portugal"),
+            Participant("sofia", "🇲🇽Mexico"),
+            Participant("olga", "🇨🇴Colombia")
+        )
+    )
+
+    // registramos los eventos
+    for (event in sportingEvents) {
+        olympics.registerSportingEvent(event)
+    }
+
+    // asignar participantes a eventos
+    participants.forEach { (event, participants) ->
+        println("event key: $event")
+        println("participants: $participants")
+        participants.forEach { participant -> olympics.registerParticipant(event, participant) }
+    }
+
+    // simular todos los juegos a la vez
+    olympics.runAllSportingEvents()
+
+    // generar reporte de los juegos olimpicos
+    olympics.generateReport()
+}
